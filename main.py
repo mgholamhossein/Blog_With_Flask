@@ -180,7 +180,7 @@ def logout():
 def get_all_posts():
     result = db.session.execute(db.select(BlogPost))
     posts = result.scalars().all()
-    print(f'is_admin: {(current_user.get_id()=='1')},  {current_user.get_id()}')
+    # print(f'is_admin: {(current_user.get_id()=='1')},  {current_user.get_id()}')
     return render_template("index.html", all_posts=posts, logged_in = current_user.is_authenticated, is_admin=(current_user.get_id()=='1'))
 
 
